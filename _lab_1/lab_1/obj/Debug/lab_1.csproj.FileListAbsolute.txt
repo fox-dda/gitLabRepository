@@ -1,0 +1,13 @@
+C:\Users\Димасик\Desktop\lab_1\lab_1\bin\Debug\lab_1.exe.config
+C:\Users\Димасик\Desktop\lab_1\lab_1\bin\Debug\lab_1.exe
+C:\Users\Димасик\Desktop\lab_1\lab_1\bin\Debug\lab_1.pdb
+C:\Users\Димасик\Desktop\lab_1\lab_1\obj\Debug\lab_1.csprojResolveAssemblyReference.cache
+C:\Users\Димасик\Desktop\lab_1\lab_1\obj\Debug\lab_1.exe
+C:\Users\Димасик\Desktop\lab_1\lab_1\obj\Debug\lab_1.pdb
+C:\Users\Димасик\Desktop\С#\_lab_1\lab_1\bin\Debug\lab_1.exe.config
+C:\Users\Димасик\Desktop\С#\_lab_1\lab_1\obj\Debug\lab_1.exe
+C:\Users\Димасик\Desktop\С#\_lab_1\lab_1\obj\Debug\lab_1.pdb
+C:\Users\Димасик\Desktop\С#\_lab_1\lab_1\bin\Debug\lab_1.exe
+C:\Users\Димасик\Desktop\С#\_lab_1\lab_1\bin\Debug\lab_1.pdb
+C:\Users\Димасик\Desktop\С#\_lab_1\lab_1\obj\Debug\lab_1.csprojResolveAssemblyReference.cache
+C:\Users\Димасик\Desktop\С#\_lab_1\lab_1\bin\Debug\Model.exe.config
