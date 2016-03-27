@@ -120,7 +120,7 @@
             this.RemoveMotionButton.Location = new System.Drawing.Point(394, 361);
             this.RemoveMotionButton.Name = "RemoveMotionButton";
             this.RemoveMotionButton.Size = new System.Drawing.Size(169, 23);
-            this.RemoveMotionButton.TabIndex = 2;
+            this.RemoveMotionButton.TabIndex = 3;
             this.RemoveMotionButton.Text = "Remove";
             this.RemoveMotionButton.UseVisualStyleBackColor = true;
             this.RemoveMotionButton.Click += new System.EventHandler(this.RemoveMotionButton_Click);
@@ -142,7 +142,7 @@
             this.CreateRandomDataButton.Location = new System.Drawing.Point(15, 390);
             this.CreateRandomDataButton.Name = "CreateRandomDataButton";
             this.CreateRandomDataButton.Size = new System.Drawing.Size(172, 23);
-            this.CreateRandomDataButton.TabIndex = 3;
+            this.CreateRandomDataButton.TabIndex = 4;
             this.CreateRandomDataButton.Text = "Create random data";
             this.CreateRandomDataButton.UseVisualStyleBackColor = true;
             this.CreateRandomDataButton.Click += new System.EventHandler(this.CreateRandomDataButton_Click);
@@ -153,7 +153,7 @@
             this.ModifyButton.Location = new System.Drawing.Point(206, 361);
             this.ModifyButton.Name = "ModifyButton";
             this.ModifyButton.Size = new System.Drawing.Size(171, 23);
-            this.ModifyButton.TabIndex = 4;
+            this.ModifyButton.TabIndex = 2;
             this.ModifyButton.Text = "Modify";
             this.ModifyButton.UseVisualStyleBackColor = true;
             this.ModifyButton.Click += new System.EventHandler(this.ModifyButton_Click);
@@ -211,7 +211,7 @@
             this.SearchButton.Location = new System.Drawing.Point(206, 390);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(171, 23);
-            this.SearchButton.TabIndex = 6;
+            this.SearchButton.TabIndex = 5;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
