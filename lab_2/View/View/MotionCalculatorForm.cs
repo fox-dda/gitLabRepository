@@ -163,6 +163,7 @@ namespace View
         private void SearchButton_Click(object sender, EventArgs e)
         {
             var SearchMotion = new SearchForm();// инициализовать форму для поиска объекта в таблице
+            SearchMotion.Owner = this; // указываем родителя формы
             SearchMotion.ShowDialog(); // открыть форму Search поверх MotionCalculator
         }
 
