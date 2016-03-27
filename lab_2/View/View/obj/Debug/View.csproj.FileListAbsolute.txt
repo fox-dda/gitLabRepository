@@ -12,3 +12,6 @@ C:\Users\Димасик\Desktop\С#\lab_2\View\View\obj\Debug\View.SearchForm.re
 C:\Users\Димасик\Desktop\С#\lab_2\View\View\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Димасик\Desktop\С#\lab_2\View\View\bin\Debug\Model.pdb
 C:\Users\Димасик\Desktop\С#\lab_2\View\View\bin\Debug\Model.dll
+C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\View\bin\Debug\View.exe.config
+C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\View\obj\Debug\View.exe
+C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\View\obj\Debug\View.pdb
