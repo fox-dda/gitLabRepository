@@ -22,66 +22,71 @@ namespace View
         /// </summary>
         private MotionCalculatorForm mainForm { get { return this.Owner as MotionCalculatorForm; } }
 
+
         /// <summary>
         /// Нажатие на кнопку "Search"
         /// </summary>
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            if (StyleRadioButton.Checked == true) // поиск по стилю
+            if (TextForSearchigMaskedTextBox.Text != "")
             {
-                for (int i = 0; i < mainForm.motionList.Count; i++) // перебираем все объекты в списке на предмет свпадения стилей
+                if (StyleRadioButton.Checked == true) // поиск по стилю
                 {
-                    if (TextForSearchigMaskedTextBox.Text == mainForm.motionList[i].style) // при совпадении добавляем объект в таблицу
+                    for (int i = 0; i < mainForm.motionList.Count; i++) // перебираем все объекты в списке на предмет свпадения стилей
                     {
-                        SearchDataGridView.Rows.Add(mainForm.motionList[i].style, mainForm.motionList[i].startCoor,
-                        mainForm.motionList[i].startSpeed, mainForm.motionList[i].time, mainForm.motionList[i].CalcFinishCoor());
+                        if (TextForSearchigMaskedTextBox.Text == mainForm.motionList[i].style) // при совпадении добавляем объект в таблицу
+                        {
+                            SearchDataGridView.Rows.Add(mainForm.motionList[i].style, mainForm.motionList[i].startCoor,
+                            mainForm.motionList[i].startSpeed, mainForm.motionList[i].time, mainForm.motionList[i].CalcFinishCoor());
+                        }
+                    }
+                }
+                if (StartCoordinateRadioButton.Checked == true) // поиск по начальной координате
+                {
+                    for (int i = 0; i < mainForm.motionList.Count; i++) // перебираем все объекты в списке на предмет совпадения
+                    {
+                        if (TextForSearchigMaskedTextBox.Text == Convert.ToString(mainForm.motionList[i].startCoor)) // при совпадении добавляем объект в таблицу
+                        {
+                            SearchDataGridView.Rows.Add(mainForm.motionList[i].style, mainForm.motionList[i].startCoor,
+                            mainForm.motionList[i].startSpeed, mainForm.motionList[i].time, mainForm.motionList[i].CalcFinishCoor());
+                        }
+                    }
+                }
+                if (StartSpeedRadioButton.Checked == true) // поиск по начальной скорости
+                {
+                    for (int i = 0; i < mainForm.motionList.Count; i++) // перебираем все объекты в списке на предмет совпадения
+                    {
+                        if (TextForSearchigMaskedTextBox.Text == Convert.ToString(mainForm.motionList[i].startSpeed)) // при совпадении добавляем объект в таблицу
+                        {
+                            SearchDataGridView.Rows.Add(mainForm.motionList[i].style, mainForm.motionList[i].startCoor,
+                            mainForm.motionList[i].startSpeed, mainForm.motionList[i].time, mainForm.motionList[i].CalcFinishCoor());
+                        }
+                    }
+                }
+                if (MotionTimeRadioButton.Checked == true) // поиск по времени движения
+                {
+                    for (int i = 0; i < mainForm.motionList.Count; i++) // перебираем все объекты в списке на предмет совпадения
+                    {
+                        if (TextForSearchigMaskedTextBox.Text == Convert.ToString(mainForm.motionList[i].time)) // при совпадении добавляем объект в таблицу
+                        {
+                            SearchDataGridView.Rows.Add(mainForm.motionList[i].style, mainForm.motionList[i].startCoor,
+                            mainForm.motionList[i].startSpeed, mainForm.motionList[i].time, mainForm.motionList[i].CalcFinishCoor());
+                        }
+                    }
+                }
+                if (FinishCoordinateRadioButton.Checked == true) // поиск по конечной координате
+                {
+                    for (int i = 0; i < mainForm.motionList.Count; i++) // перебираем все объекты в списке на предмет совпадения
+                    {
+                        if (TextForSearchigMaskedTextBox.Text == Convert.ToString(mainForm.motionList[i].CalcFinishCoor())) // при совпадении добавляем объект в таблицу
+                        {
+                            SearchDataGridView.Rows.Add(mainForm.motionList[i].style, mainForm.motionList[i].startCoor,
+                            mainForm.motionList[i].startSpeed, mainForm.motionList[i].time, mainForm.motionList[i].CalcFinishCoor());
+                        }
                     }
                 }
             }
-            if (StartCoordinateRadioButton.Checked == true) // поиск по начальной координате
-            {
-                for (int i = 0; i < mainForm.motionList.Count; i++) // перебираем все объекты в списке на предмет совпадения
-                {
-                    if (TextForSearchigMaskedTextBox.Text == Convert.ToString(mainForm.motionList[i].startCoor)) // при совпадении добавляем объект в таблицу
-                    {
-                        SearchDataGridView.Rows.Add(mainForm.motionList[i].style, mainForm.motionList[i].startCoor,
-                        mainForm.motionList[i].startSpeed, mainForm.motionList[i].time, mainForm.motionList[i].CalcFinishCoor());
-                    }
-                }
-            }
-            if (StartSpeedRadioButton.Checked == true) // поиск по начальной скорости
-            {
-                for (int i = 0; i < mainForm.motionList.Count; i++) // перебираем все объекты в списке на предмет совпадения
-                {
-                    if (TextForSearchigMaskedTextBox.Text == Convert.ToString(mainForm.motionList[i].startSpeed)) // при совпадении добавляем объект в таблицу
-                    {
-                        SearchDataGridView.Rows.Add(mainForm.motionList[i].style, mainForm.motionList[i].startCoor,
-                        mainForm.motionList[i].startSpeed, mainForm.motionList[i].time, mainForm.motionList[i].CalcFinishCoor());
-                    }
-                }
-            }
-            if (MotionTimeRadioButton.Checked == true) // поиск по времени движения
-            {
-                for (int i = 0; i < mainForm.motionList.Count; i++) // перебираем все объекты в списке на предмет совпадения
-                {
-                    if (TextForSearchigMaskedTextBox.Text == Convert.ToString(mainForm.motionList[i].time)) // при совпадении добавляем объект в таблицу
-                    {
-                        SearchDataGridView.Rows.Add(mainForm.motionList[i].style, mainForm.motionList[i].startCoor,
-                        mainForm.motionList[i].startSpeed, mainForm.motionList[i].time, mainForm.motionList[i].CalcFinishCoor());
-                    }
-                }
-            }
-            if (FinishCoordinateRadioButton.Checked == true) // поиск по конечной координате
-            {
-                for (int i = 0; i < mainForm.motionList.Count; i++) // перебираем все объекты в списке на предмет совпадения
-                {
-                    if (TextForSearchigMaskedTextBox.Text == Convert.ToString(mainForm.motionList[i].CalcFinishCoor())) // при совпадении добавляем объект в таблицу
-                    {
-                        SearchDataGridView.Rows.Add(mainForm.motionList[i].style, mainForm.motionList[i].startCoor,
-                        mainForm.motionList[i].startSpeed, mainForm.motionList[i].time, mainForm.motionList[i].CalcFinishCoor());
-                    }
-                }
-            }
+            else MessageBox.Show("Searching text is absent");
         }
     }
 }
