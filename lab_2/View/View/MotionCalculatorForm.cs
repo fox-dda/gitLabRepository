@@ -172,7 +172,13 @@ namespace View
         /// </summary>
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var serializer = new Newtonsoft.Json.JsonSerializer();
+            var serializer = new Newtonsoft.Json.JsonSerializer()
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+                TypeNameHandling = TypeNameHandling.Auto,
+                Formatting = Formatting.Indented,
+                DefaultValueHandling = DefaultValueHandling.Ignore
+            };
             var saveFileDialog = new SaveFileDialog();
             var fileName = saveFileDialog.FileName;
             saveFileDialog.Filter = "Motion | *.motion";
