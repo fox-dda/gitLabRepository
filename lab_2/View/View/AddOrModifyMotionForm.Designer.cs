@@ -32,7 +32,7 @@
             this.StartCoordinateMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.StartSpeedMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.MotionTimeMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.AcceleratedRadioButton = new System.Windows.Forms.RadioButton();
+            this.AccelerationRadioButton = new System.Windows.Forms.RadioButton();
             this.VibrationalRadioButton = new System.Windows.Forms.RadioButton();
             this.StartCooddinateLabel = new System.Windows.Forms.Label();
             this.StartSpeedLabel = new System.Windows.Forms.Label();
@@ -86,14 +86,14 @@
             // 
             // AcceleratedRadioButton
             // 
-            this.AcceleratedRadioButton.AutoSize = true;
-            this.AcceleratedRadioButton.Location = new System.Drawing.Point(16, 48);
-            this.AcceleratedRadioButton.Name = "AcceleratedRadioButton";
-            this.AcceleratedRadioButton.Size = new System.Drawing.Size(82, 17);
-            this.AcceleratedRadioButton.TabIndex = 4;
-            this.AcceleratedRadioButton.Text = "Accelerated";
-            this.AcceleratedRadioButton.UseVisualStyleBackColor = true;
-            this.AcceleratedRadioButton.CheckedChanged += new System.EventHandler(this.AcceleratedRadioButton_CheckedChanged);
+            this.AccelerationRadioButton.AutoSize = true;
+            this.AccelerationRadioButton.Location = new System.Drawing.Point(16, 48);
+            this.AccelerationRadioButton.Name = "AcceleratedRadioButton";
+            this.AccelerationRadioButton.Size = new System.Drawing.Size(82, 17);
+            this.AccelerationRadioButton.TabIndex = 4;
+            this.AccelerationRadioButton.Text = "Accelerated";
+            this.AccelerationRadioButton.UseVisualStyleBackColor = true;
+            this.AccelerationRadioButton.CheckedChanged += new System.EventHandler(this.AcceleratedRadioButton_CheckedChanged);
             // 
             // VibrationalRadioButton
             // 
@@ -140,7 +140,7 @@
             // 
             this.MotionStyleGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.MotionStyleGroupBox.Controls.Add(this.UniformRadioButton);
-            this.MotionStyleGroupBox.Controls.Add(this.AcceleratedRadioButton);
+            this.MotionStyleGroupBox.Controls.Add(this.AccelerationRadioButton);
             this.MotionStyleGroupBox.Controls.Add(this.VibrationalRadioButton);
             this.MotionStyleGroupBox.Location = new System.Drawing.Point(17, 12);
             this.MotionStyleGroupBox.Name = "MotionStyleGroupBox";
@@ -262,7 +262,7 @@
         private System.Windows.Forms.MaskedTextBox StartCoordinateMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox StartSpeedMaskedTextBox;
         private System.Windows.Forms.MaskedTextBox MotionTimeMaskedTextBox;
-        private System.Windows.Forms.RadioButton AcceleratedRadioButton;
+        private System.Windows.Forms.RadioButton AccelerationRadioButton;
         private System.Windows.Forms.RadioButton VibrationalRadioButton;
         private System.Windows.Forms.Label StartCooddinateLabel;
         private System.Windows.Forms.Label StartSpeedLabel;

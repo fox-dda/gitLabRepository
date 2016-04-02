@@ -46,11 +46,14 @@ namespace View
                 }
                 if (mainForm.motionList[mainForm.modifyItemFlag] is Model.Accelerated)
                 {
-                    AcceleratedRadioButton.Checked = true;
+                    AccelerationRadioButton.Checked = true;
                     StartCoordinateMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].startCoor);
                     StartSpeedMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].startSpeed);
                     MotionTimeMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].time);
-                    AccelerationMaskedTextBox.Text = Convert.ToString((2 * (mainForm.motionList[mainForm.modifyItemFlag].CalcFinishCoor()) - mainForm.motionList[mainForm.modifyItemFlag].startCoor) / (mainForm.motionList[mainForm.modifyItemFlag].time * mainForm.motionList[mainForm.modifyItemFlag].time));
+                    if (mainForm.motionList[mainForm.modifyItemFlag].time != 0)
+                        AccelerationMaskedTextBox.Text = Convert.ToString(2 * (mainForm.motionList[mainForm.modifyItemFlag].CalcFinishCoor() - mainForm.motionList[mainForm.modifyItemFlag].startCoor) / (mainForm.motionList[mainForm.modifyItemFlag].time * mainForm.motionList[mainForm.modifyItemFlag].time));
+                    else
+                        AccelerationMaskedTextBox.Text = "0";
                 }
                 if (mainForm.motionList[mainForm.modifyItemFlag] is Model.Vibrational)
                 {
@@ -76,7 +79,7 @@ namespace View
                 }
                 else AddButton.Enabled = true;  // кнопка добавления иначе активна
             }
-            if (AcceleratedRadioButton.Checked == true)
+            if (AccelerationRadioButton.Checked == true)
             {
                 if (StartCoordinateMaskedTextBox.Text == "" || StartSpeedMaskedTextBox.Text == "" || MotionTimeMaskedTextBox.Text == "" || AccelerationMaskedTextBox.Text == "")
                 {
@@ -104,6 +107,12 @@ namespace View
         /// </summary>
         private void AddButton_Click(object sender, EventArgs e)
         {
+            if (Convert.ToInt32(AmplitudeMaskedTextBox.Text) == 0)
+            {
+                MessageBox.Show("Amplitude can not be zero");
+                AmplitudeMaskedTextBox.Text = "";
+                return;
+            }
             Model.IMotion motionModel = null; // создание локльной перменной интерфейса
             switch (_style) //  в зависимости от стиля создаем разные объекты
             {
