@@ -196,7 +196,9 @@
             // 
             this.AccelerationMaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.AccelerationMaskedTextBox.Location = new System.Drawing.Point(101, 213);
+            this.AccelerationMaskedTextBox.Mask = "00000";
             this.AccelerationMaskedTextBox.Name = "AccelerationMaskedTextBox";
+            this.AccelerationMaskedTextBox.PromptChar = ' ';
             this.AccelerationMaskedTextBox.Size = new System.Drawing.Size(55, 20);
             this.AccelerationMaskedTextBox.TabIndex = 13;
             this.AccelerationMaskedTextBox.TextChanged += new System.EventHandler(this.AccelerationMaskedTextBox_TextChanged);
@@ -205,9 +207,12 @@
             // 
             this.AmplitudeMaskedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.AmplitudeMaskedTextBox.Location = new System.Drawing.Point(101, 239);
+            this.AmplitudeMaskedTextBox.Mask = "00000";
             this.AmplitudeMaskedTextBox.Name = "AmplitudeMaskedTextBox";
+            this.AmplitudeMaskedTextBox.PromptChar = ' ';
             this.AmplitudeMaskedTextBox.Size = new System.Drawing.Size(55, 20);
             this.AmplitudeMaskedTextBox.TabIndex = 14;
+            this.AmplitudeMaskedTextBox.ValidatingType = typeof(int);
             this.AmplitudeMaskedTextBox.TextChanged += new System.EventHandler(this.AmplitudeMaskedTextBox_TextChanged);
             // 
             // CancelButton
