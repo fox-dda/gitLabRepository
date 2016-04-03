@@ -11,19 +11,19 @@ namespace Model
     /// </summary>
     public class Uniform : IMotion
     {
-        private int _startCoor;
+        private int _startCoorditate;
         /// <summary>
         /// Начальная координата движения
         /// </summary>
-        public int startCoor
+        public int StartCoordinate
         {
             set
             {
-                _startCoor = value;
+                _startCoorditate = value;
             }
             get 
             { 
-                return _startCoor; 
+                return _startCoorditate; 
             }
         }
 
@@ -31,7 +31,7 @@ namespace Model
         /// <summary>
         /// Начальная скорость движения
         /// </summary>
-        public int startSpeed
+        public int StartSpeed
         {
             set
             {
@@ -46,7 +46,7 @@ namespace Model
         /// <summary>
         /// Время движения
         /// </summary>
-        public int time
+        public int Time
         {
             set
             {
@@ -65,7 +65,7 @@ namespace Model
         /// <summary>
         /// тип движения
         /// </summary>
-        public string style
+        public string Style
         {
             get
             {
@@ -78,7 +78,7 @@ namespace Model
         /// </summary>
         public int CalcFinishCoor()
         {
-            return startCoor + startSpeed * time;
+            return StartCoordinate + StartSpeed * Time;
         }
 
         /// <summary>
@@ -92,15 +92,15 @@ namespace Model
            /// <summary>
            /// Начальная координата
            /// </summary>
-           startCoor = c;
+           StartCoordinate = c;
            /// <summary>
            /// Начальная скорость
            /// </summary>
-           startSpeed = s;
+           StartSpeed = s;
            /// <summary>
            /// Время движения
            /// </summary>
-           time = t;
+           Time = t;
        }
     }
 }

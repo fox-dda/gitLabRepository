@@ -40,28 +40,28 @@ namespace View
                 if (mainForm.motionList[mainForm.modifyItemFlag] is Model.Uniform)
                 {
                     UniformRadioButton.Checked = true;
-                    StartCoordinateMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].startCoor);
-                    StartSpeedMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].startSpeed);
-                    MotionTimeMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].time);
+                    StartCoordinateMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].StartCoordinate);
+                    StartSpeedMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].StartSpeed);
+                    MotionTimeMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].Time);
                 }
                 if (mainForm.motionList[mainForm.modifyItemFlag] is Model.Accelerated)
                 {
                     AccelerationRadioButton.Checked = true;
-                    StartCoordinateMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].startCoor);
-                    StartSpeedMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].startSpeed);
-                    MotionTimeMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].time);
-                    if (mainForm.motionList[mainForm.modifyItemFlag].time != 0)
-                        AccelerationMaskedTextBox.Text = Convert.ToString(2 * (mainForm.motionList[mainForm.modifyItemFlag].CalcFinishCoor() - mainForm.motionList[mainForm.modifyItemFlag].startCoor) / (mainForm.motionList[mainForm.modifyItemFlag].time * mainForm.motionList[mainForm.modifyItemFlag].time));
+                    StartCoordinateMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].StartCoordinate);
+                    StartSpeedMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].StartSpeed);
+                    MotionTimeMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].Time);
+                    if (mainForm.motionList[mainForm.modifyItemFlag].Time != 0)
+                        AccelerationMaskedTextBox.Text = Convert.ToString(2 * (mainForm.motionList[mainForm.modifyItemFlag].CalcFinishCoor() - mainForm.motionList[mainForm.modifyItemFlag].StartCoordinate) / (mainForm.motionList[mainForm.modifyItemFlag].Time * mainForm.motionList[mainForm.modifyItemFlag].Time));
                     else
                         AccelerationMaskedTextBox.Text = "0";
                 }
                 if (mainForm.motionList[mainForm.modifyItemFlag] is Model.Vibrational)
                 {
                     VibrationalRadioButton.Checked = true;
-                    StartCoordinateMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].startCoor);
-                    StartSpeedMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].startSpeed);
-                    MotionTimeMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].time);
-                    AmplitudeMaskedTextBox.Text = Convert.ToString((mainForm.motionList[mainForm.modifyItemFlag].time * mainForm.motionList[mainForm.modifyItemFlag].startSpeed) / (mainForm.motionList[mainForm.modifyItemFlag].CalcFinishCoor() - mainForm.motionList[mainForm.modifyItemFlag].startCoor + 1));
+                    StartCoordinateMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].StartCoordinate);
+                    StartSpeedMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].StartSpeed);
+                    MotionTimeMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].Time);
+                    AmplitudeMaskedTextBox.Text = Convert.ToString((mainForm.motionList[mainForm.modifyItemFlag].Time * mainForm.motionList[mainForm.modifyItemFlag].StartSpeed) / (mainForm.motionList[mainForm.modifyItemFlag].CalcFinishCoor() - mainForm.motionList[mainForm.modifyItemFlag].StartCoordinate + 1));
                 }
             }
         }
@@ -107,12 +107,7 @@ namespace View
         /// </summary>
         private void AddButton_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(AmplitudeMaskedTextBox.Text) == 0)
-            {
-                MessageBox.Show("Amplitude can not be zero");
-                AmplitudeMaskedTextBox.Text = "";
-                return;
-            }
+            
             Model.IMotion motionModel = null; // создание локльной перменной интерфейса
             switch (_style) //  в зависимости от стиля создаем разные объекты
             {
@@ -124,7 +119,13 @@ namespace View
                     break;
                 case 2:  // колебательное
                     motionModel = new Model.Vibrational(Convert.ToInt32(StartCoordinateMaskedTextBox.Text), Convert.ToInt32(StartSpeedMaskedTextBox.Text), Convert.ToInt32(MotionTimeMaskedTextBox.Text), Convert.ToInt32(AmplitudeMaskedTextBox.Text));
-                    break;
+                    if (Convert.ToInt32(AmplitudeMaskedTextBox.Text) == 0)
+                    {
+                        MessageBox.Show("Amplitude can not be zero");
+                        AmplitudeMaskedTextBox.Text = "";
+                        return;
+                    }
+            break;
             }
             if (mainForm.modifyItemFlag == -1) // если форма открыта в режиме Add, то добавить объект
                 mainForm.motionList.Add(motionModel);

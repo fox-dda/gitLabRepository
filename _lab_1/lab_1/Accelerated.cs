@@ -15,7 +15,7 @@ namespace Model
         /// <summary>
         /// Начальная координата
         /// </summary>
-        public int startCoor
+        public int StartCoordinate
         {
             set
             {
@@ -31,7 +31,7 @@ namespace Model
         /// <summary>
         /// Начальная скорость
         /// </summary>
-        public int startSpeed
+        public int StartSpeed
         {
             set
             {
@@ -46,7 +46,7 @@ namespace Model
         /// <summary>
         /// Время движения
         /// </summary>
-        public int time
+        public int Time
         {
             set
             {
@@ -63,7 +63,7 @@ namespace Model
         /// <summary>
         /// Тип движения
         /// </summary>
-        public string style
+        public string Style
         {
             get
             {
@@ -75,7 +75,7 @@ namespace Model
         /// <summary>
         /// Ускорение движения
         /// </summary>
-        public int acceleration
+        public int Acceleration
         {
             set
             {
@@ -92,7 +92,7 @@ namespace Model
         /// </summary>
         public int CalcFinishCoor()
         {
-            return startCoor + startSpeed * time + acceleration * time * time / 2;
+            return StartCoordinate + StartSpeed * Time + Acceleration * Time * Time / 2;
         }
 
         /// <summary>
@@ -104,10 +104,10 @@ namespace Model
         /// <param name="a">Ускорение</param>
        public Accelerated(int c, int s, int t, int a)
        {
-           startCoor = c;
-           startSpeed = s;
-           time = t;
-           acceleration = a; 
+           StartCoordinate = c;
+           StartSpeed = s;
+           Time = t;
+           Acceleration = a; 
        }
     }
 }

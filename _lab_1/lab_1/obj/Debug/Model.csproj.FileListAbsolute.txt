@@ -4,3 +4,9 @@ C:\Users\Димасик\Desktop\С#\_lab_1\lab_1\obj\Debug\Model.csprojResolveAs
 C:\Users\Димасик\Desktop\С#\_lab_1\lab_1\bin\Debug\Model.dll.config
 C:\Users\Димасик\Desktop\С#\_lab_1\lab_1\bin\Debug\Model.dll
 C:\Users\Димасик\Desktop\С#\_lab_1\lab_1\obj\Debug\Model.dll
+C:\Users\Димасик\Desktop\gitLabRepository\_lab_1\lab_1\bin\Debug\Model.dll.config
+C:\Users\Димасик\Desktop\gitLabRepository\_lab_1\lab_1\bin\Debug\Model.dll
+C:\Users\Димасик\Desktop\gitLabRepository\_lab_1\lab_1\bin\Debug\Model.pdb
+C:\Users\Димасик\Desktop\gitLabRepository\_lab_1\lab_1\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\Димасик\Desktop\gitLabRepository\_lab_1\lab_1\obj\Debug\Model.dll
+C:\Users\Димасик\Desktop\gitLabRepository\_lab_1\lab_1\obj\Debug\Model.pdb

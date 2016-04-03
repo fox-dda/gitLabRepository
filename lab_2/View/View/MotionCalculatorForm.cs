@@ -91,8 +91,8 @@ namespace View
                     MotionDataGridView.Rows.Clear(); // очистить таблицу
                     for (int i = 0; i < motionList.Count; i++) // перебираем все объекты из списка и добавляем в таблицу
                     {
-                        MotionDataGridView.Rows.Add(motionList[i].style, motionList[i].startCoor,
-                        motionList[i].startSpeed, motionList[i].time, motionList[i].CalcFinishCoor());
+                        MotionDataGridView.Rows.Add(motionList[i].Style, motionList[i].StartCoordinate,
+                        motionList[i].StartSpeed, motionList[i].Time, motionList[i].CalcFinishCoor());
                     }
                 }
             }

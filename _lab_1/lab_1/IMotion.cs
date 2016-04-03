@@ -14,19 +14,19 @@ namespace Model
           /// <summary>
           /// Начальная координата
           /// </summary>
-         int startCoor{ get; set; }
+         int StartCoordinate{ get; set; }
          /// <summary>
          /// Начальная скорость
          /// </summary>
-         int startSpeed{ get; set; }
+         int StartSpeed{ get; set; }
          /// <summary>
          /// Время движения
          /// </summary>
-         int time { get; set; }
+         int Time { get; set; }
          /// <summary>
          /// Тип движения
          /// </summary>
-         string style { get; }
+         string Style { get; }
          /// <summary>
          /// Расчет конечной координаты
          /// </summary>

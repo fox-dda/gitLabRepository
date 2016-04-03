@@ -15,7 +15,7 @@ namespace Model
         /// <summary>
         /// Начальная координата
         /// </summary>
-        public int startCoor
+        public int StartCoordinate
         {
             set
             {
@@ -31,7 +31,7 @@ namespace Model
         /// <summary>
         /// Начальная скорость
         /// </summary>
-        public int startSpeed
+        public int StartSpeed
         {
             set
             {
@@ -47,7 +47,7 @@ namespace Model
         /// <summary>
         /// Время движения
         /// </summary>
-        public int time
+        public int Time
         {
             set
             {
@@ -64,7 +64,7 @@ namespace Model
         /// <summary>
         /// Тип движения
         /// </summary>
-        public string style
+        public string Style
         {
             get
             {
@@ -78,14 +78,14 @@ namespace Model
         /// <returns></returns>
         public int CalcFinishCoor()
         {
-            return startCoor + ((startSpeed * time) % amplitude);
+            return StartCoordinate + ((StartSpeed * Time) % Amplitude);
         }
 
         int _amplitude;
         /// <summary>
         /// Амплитуада движения       
         /// </summary>
-        public int amplitude
+        public int Amplitude
         {
             set
             {
@@ -108,10 +108,10 @@ namespace Model
         /// <param name="a">Амплитуда движения</param>
        public Vibrational(int c, int s, int t, int a)
        {
-           startCoor = c;
-           startSpeed = s;
-           time = t;
-           amplitude = a;
+           StartCoordinate = c;
+           StartSpeed = s;
+           Time = t;
+           Amplitude = a;
        }
     }
 }
