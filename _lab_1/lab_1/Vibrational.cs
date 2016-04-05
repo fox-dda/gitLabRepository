@@ -89,8 +89,8 @@ namespace Model
         {
             set
             {
-                if (value < 0)
-                    _amplitude = 0;
+                if (value < 0 && value != 0)
+                    throw new ArgumentException();
                 else _amplitude = value;
             }
             get

@@ -1,0 +1,8 @@
+C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\UnitTests\bin\Debug\Model.dll
+C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\UnitTests\bin\Debug\Model.pdb
+C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\UnitTests\obj\Debug\UnitTests.pdb
