@@ -51,7 +51,7 @@ namespace View
                     StartSpeedMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].StartSpeed);
                     MotionTimeMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].Time);
                     if (mainForm.motionList[mainForm.modifyItemFlag].Time != 0)
-                        AccelerationMaskedTextBox.Text = Convert.ToString(2 * (mainForm.motionList[mainForm.modifyItemFlag].CalcFinishCoor() - mainForm.motionList[mainForm.modifyItemFlag].StartCoordinate) / (mainForm.motionList[mainForm.modifyItemFlag].Time * mainForm.motionList[mainForm.modifyItemFlag].Time));
+                        AccelerationMaskedTextBox.Text = Convert.ToString(2 * (mainForm.motionList[mainForm.modifyItemFlag].CalcFinishCoordinate() - mainForm.motionList[mainForm.modifyItemFlag].StartCoordinate) / (mainForm.motionList[mainForm.modifyItemFlag].Time * mainForm.motionList[mainForm.modifyItemFlag].Time));
                     else
                         AccelerationMaskedTextBox.Text = "0";
                 }
@@ -61,7 +61,7 @@ namespace View
                     StartCoordinateMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].StartCoordinate);
                     StartSpeedMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].StartSpeed);
                     MotionTimeMaskedTextBox.Text = Convert.ToString(mainForm.motionList[mainForm.modifyItemFlag].Time);
-                    AmplitudeMaskedTextBox.Text = Convert.ToString((mainForm.motionList[mainForm.modifyItemFlag].Time * mainForm.motionList[mainForm.modifyItemFlag].StartSpeed) / (mainForm.motionList[mainForm.modifyItemFlag].CalcFinishCoor() - mainForm.motionList[mainForm.modifyItemFlag].StartCoordinate + 1));
+                    AmplitudeMaskedTextBox.Text = Convert.ToString((mainForm.motionList[mainForm.modifyItemFlag].Time * mainForm.motionList[mainForm.modifyItemFlag].StartSpeed) / (mainForm.motionList[mainForm.modifyItemFlag].CalcFinishCoordinate() - mainForm.motionList[mainForm.modifyItemFlag].StartCoordinate + 1));
                 }
             }
         }

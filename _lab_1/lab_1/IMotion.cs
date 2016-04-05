@@ -31,6 +31,6 @@ namespace Model
          /// Расчет конечной координаты
          /// </summary>
          /// <returns></returns>
-         int CalcFinishCoor();
+         int CalcFinishCoordinate();
     }
 }

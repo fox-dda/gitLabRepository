@@ -37,7 +37,7 @@ namespace View
                         if (TextForSearchigMaskedTextBox.Text == mainForm.motionList[i].Style) // при совпадении добавляем объект в таблицу
                         {
                             SearchDataGridView.Rows.Add(mainForm.motionList[i].Style, mainForm.motionList[i].StartCoordinate,
-                            mainForm.motionList[i].StartSpeed, mainForm.motionList[i].Time, mainForm.motionList[i].CalcFinishCoor());
+                            mainForm.motionList[i].StartSpeed, mainForm.motionList[i].Time, mainForm.motionList[i].CalcFinishCoordinate());
                         }
                     }
                 }
@@ -48,7 +48,7 @@ namespace View
                         if (TextForSearchigMaskedTextBox.Text == Convert.ToString(mainForm.motionList[i].StartCoordinate)) // при совпадении добавляем объект в таблицу
                         {
                             SearchDataGridView.Rows.Add(mainForm.motionList[i].Style, mainForm.motionList[i].StartCoordinate,
-                            mainForm.motionList[i].StartSpeed, mainForm.motionList[i].Time, mainForm.motionList[i].CalcFinishCoor());
+                            mainForm.motionList[i].StartSpeed, mainForm.motionList[i].Time, mainForm.motionList[i].CalcFinishCoordinate());
                         }
                     }
                 }
@@ -59,7 +59,7 @@ namespace View
                         if (TextForSearchigMaskedTextBox.Text == Convert.ToString(mainForm.motionList[i].StartSpeed)) // при совпадении добавляем объект в таблицу
                         {
                             SearchDataGridView.Rows.Add(mainForm.motionList[i].Style, mainForm.motionList[i].StartCoordinate,
-                            mainForm.motionList[i].StartSpeed, mainForm.motionList[i].Time, mainForm.motionList[i].CalcFinishCoor());
+                            mainForm.motionList[i].StartSpeed, mainForm.motionList[i].Time, mainForm.motionList[i].CalcFinishCoordinate());
                         }
                     }
                 }
@@ -70,7 +70,7 @@ namespace View
                         if (TextForSearchigMaskedTextBox.Text == Convert.ToString(mainForm.motionList[i].Time)) // при совпадении добавляем объект в таблицу
                         {
                             SearchDataGridView.Rows.Add(mainForm.motionList[i].Style, mainForm.motionList[i].StartCoordinate,
-                            mainForm.motionList[i].StartSpeed, mainForm.motionList[i].Time, mainForm.motionList[i].CalcFinishCoor());
+                            mainForm.motionList[i].StartSpeed, mainForm.motionList[i].Time, mainForm.motionList[i].CalcFinishCoordinate());
                         }
                     }
                 }
@@ -78,10 +78,10 @@ namespace View
                 {
                     for (int i = 0; i < mainForm.motionList.Count; i++) // перебираем все объекты в списке на предмет совпадения
                     {
-                        if (TextForSearchigMaskedTextBox.Text == Convert.ToString(mainForm.motionList[i].CalcFinishCoor())) // при совпадении добавляем объект в таблицу
+                        if (TextForSearchigMaskedTextBox.Text == Convert.ToString(mainForm.motionList[i].CalcFinishCoordinate())) // при совпадении добавляем объект в таблицу
                         {
                             SearchDataGridView.Rows.Add(mainForm.motionList[i].Style, mainForm.motionList[i].StartCoordinate,
-                            mainForm.motionList[i].StartSpeed, mainForm.motionList[i].Time, mainForm.motionList[i].CalcFinishCoor());
+                            mainForm.motionList[i].StartSpeed, mainForm.motionList[i].Time, mainForm.motionList[i].CalcFinishCoordinate());
                         }
                     }
                 }

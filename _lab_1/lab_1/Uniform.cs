@@ -76,7 +76,7 @@ namespace Model
         /// <summary>
         /// Расчет конечной координаты
         /// </summary>
-        public int CalcFinishCoor()
+        public int CalcFinishCoordinate()
         {
             return StartCoordinate + StartSpeed * Time;
         }
