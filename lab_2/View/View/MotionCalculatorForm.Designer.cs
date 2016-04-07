@@ -47,6 +47,7 @@
             this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.moreButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MotionDataGridView)).BeginInit();
             this.MotionMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -139,9 +140,9 @@
             // CreateRandomDataButton
             // 
             this.CreateRandomDataButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.CreateRandomDataButton.Location = new System.Drawing.Point(15, 390);
+            this.CreateRandomDataButton.Location = new System.Drawing.Point(394, 390);
             this.CreateRandomDataButton.Name = "CreateRandomDataButton";
-            this.CreateRandomDataButton.Size = new System.Drawing.Size(172, 23);
+            this.CreateRandomDataButton.Size = new System.Drawing.Size(169, 23);
             this.CreateRandomDataButton.TabIndex = 4;
             this.CreateRandomDataButton.Text = "Create random data";
             this.CreateRandomDataButton.UseVisualStyleBackColor = true;
@@ -182,26 +183,26 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(111, 6);
             // 
             // NewToolStripMenuItem
             // 
             this.NewToolStripMenuItem.Name = "NewToolStripMenuItem";
-            this.NewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.NewToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.NewToolStripMenuItem.Text = "New";
             this.NewToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
             // SaveAsToolStripMenuItem
             // 
             this.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem";
-            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.SaveAsToolStripMenuItem.Text = "Save As";
             this.SaveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // LoadToolStripMenuItem
             // 
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
-            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.LoadToolStripMenuItem.Text = "Load";
             this.LoadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
@@ -216,11 +217,21 @@
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
+            // moreButton
+            // 
+            this.moreButton.Location = new System.Drawing.Point(15, 391);
+            this.moreButton.Name = "moreButton";
+            this.moreButton.Size = new System.Drawing.Size(172, 23);
+            this.moreButton.TabIndex = 6;
+            this.moreButton.Text = "More...";
+            this.moreButton.UseVisualStyleBackColor = true;
+            // 
             // MotionCalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 426);
+            this.Controls.Add(this.moreButton);
             this.Controls.Add(this.MotionDataGridView);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.ModifyButton);
@@ -263,6 +274,7 @@
         private System.Windows.Forms.ToolStripMenuItem SaveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LoadToolStripMenuItem;
         private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.Button moreButton;
     }
 }
 

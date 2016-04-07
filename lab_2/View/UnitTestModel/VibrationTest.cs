@@ -77,7 +77,7 @@ namespace Model
             var vibrational = new Vibrational(0, 0, 0, 0);
             vibrational.Time = Amplitude;
         }
-
+        
         /// <summary>
         /// Негативный тест Amplitude
         /// </summary>
@@ -132,7 +132,6 @@ namespace Model
                 "Тестирование метода CalcFinishCoordinate при присваивании 1, 2, -3, int.MinValue в аргументы")]
         [TestCase(1, 2, -3, 0,
             TestName = "Тестирование метода CalcFinishCoordinate при присваивании 1, 2, -3, 0 в аргументы")]
-
         public void CalcFinishCoordinateTestNegative(int startCoordinate, int startSpeed, int time, int amplitude)
         {
             NUnit.Framework.Assert.Throws(typeof(ArgumentException), () =>

@@ -223,6 +223,11 @@ namespace View
                     MessageBox.Show("File is loading");
             }
         }
+
+        private void moreButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
