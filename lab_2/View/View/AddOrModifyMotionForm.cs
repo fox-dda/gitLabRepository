@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
 
 namespace View
 {
@@ -108,7 +109,7 @@ namespace View
         private void AddButton_Click(object sender, EventArgs e)
         {
             
-            Model.IMotion motionModel = null; // создание локльной перменной интерфейса
+            IMotion motionModel = null; // создание локльной перменной интерфейса
             switch (_style) //  в зависимости от стиля создаем разные объекты
             {
                 case 0:  // равноммерное движение
@@ -183,14 +184,14 @@ namespace View
         private void CloseButton_Click(object sender, EventArgs e)
         {
            mainForm.modifyItemFlag = -1;
-           this.Close();
+           this.Close(); // закрыть окно
         }
         //проверка на полноту данных для добавления или изменения объекта
         private void StartCoordinateMaskedTextBox_TextChanged(object sender, EventArgs e)
         {
             CheckDataComplitness();
         }
-
+        
         private void StartSpeedMaskedTextBox_TextChanged(object sender, EventArgs e)
         {
             CheckDataComplitness();
