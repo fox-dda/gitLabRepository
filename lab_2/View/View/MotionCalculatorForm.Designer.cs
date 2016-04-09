@@ -47,7 +47,7 @@
             this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchButton = new System.Windows.Forms.Button();
-            this.moreButton = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.MotionDataGridView)).BeginInit();
             this.MotionMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MotionListGroupBox.Location = new System.Drawing.Point(12, 35);
             this.MotionListGroupBox.Name = "MotionListGroupBox";
-            this.MotionListGroupBox.Size = new System.Drawing.Size(554, 310);
+            this.MotionListGroupBox.Size = new System.Drawing.Size(825, 310);
             this.MotionListGroupBox.TabIndex = 0;
             this.MotionListGroupBox.TabStop = false;
             this.MotionListGroupBox.Text = "Motion list";
@@ -118,7 +118,7 @@
             // RemoveMotionButton
             // 
             this.RemoveMotionButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.RemoveMotionButton.Location = new System.Drawing.Point(394, 361);
+            this.RemoveMotionButton.Location = new System.Drawing.Point(529, 361);
             this.RemoveMotionButton.Name = "RemoveMotionButton";
             this.RemoveMotionButton.Size = new System.Drawing.Size(169, 23);
             this.RemoveMotionButton.TabIndex = 3;
@@ -129,7 +129,7 @@
             // AddMotionButton
             // 
             this.AddMotionButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.AddMotionButton.Location = new System.Drawing.Point(15, 361);
+            this.AddMotionButton.Location = new System.Drawing.Point(150, 361);
             this.AddMotionButton.Name = "AddMotionButton";
             this.AddMotionButton.Size = new System.Drawing.Size(172, 23);
             this.AddMotionButton.TabIndex = 1;
@@ -140,7 +140,7 @@
             // CreateRandomDataButton
             // 
             this.CreateRandomDataButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.CreateRandomDataButton.Location = new System.Drawing.Point(394, 390);
+            this.CreateRandomDataButton.Location = new System.Drawing.Point(153, 390);
             this.CreateRandomDataButton.Name = "CreateRandomDataButton";
             this.CreateRandomDataButton.Size = new System.Drawing.Size(169, 23);
             this.CreateRandomDataButton.TabIndex = 4;
@@ -151,7 +151,7 @@
             // ModifyButton
             // 
             this.ModifyButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.ModifyButton.Location = new System.Drawing.Point(206, 361);
+            this.ModifyButton.Location = new System.Drawing.Point(341, 361);
             this.ModifyButton.Name = "ModifyButton";
             this.ModifyButton.Size = new System.Drawing.Size(171, 23);
             this.ModifyButton.TabIndex = 2;
@@ -165,7 +165,7 @@
             this.fileToolStripMenuItem});
             this.MotionMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.MotionMenuStrip.Name = "MotionMenuStrip";
-            this.MotionMenuStrip.Size = new System.Drawing.Size(568, 24);
+            this.MotionMenuStrip.Size = new System.Drawing.Size(839, 24);
             this.MotionMenuStrip.TabIndex = 5;
             this.MotionMenuStrip.Text = "menuStrip1";
             // 
@@ -209,7 +209,7 @@
             // SearchButton
             // 
             this.SearchButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.SearchButton.Location = new System.Drawing.Point(206, 390);
+            this.SearchButton.Location = new System.Drawing.Point(341, 390);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(171, 23);
             this.SearchButton.TabIndex = 5;
@@ -217,21 +217,11 @@
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // moreButton
-            // 
-            this.moreButton.Location = new System.Drawing.Point(15, 391);
-            this.moreButton.Name = "moreButton";
-            this.moreButton.Size = new System.Drawing.Size(172, 23);
-            this.moreButton.TabIndex = 6;
-            this.moreButton.Text = "More...";
-            this.moreButton.UseVisualStyleBackColor = true;
-            // 
             // MotionCalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 426);
-            this.Controls.Add(this.moreButton);
+            this.ClientSize = new System.Drawing.Size(839, 426);
             this.Controls.Add(this.MotionDataGridView);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.ModifyButton);
@@ -274,7 +264,7 @@
         private System.Windows.Forms.ToolStripMenuItem SaveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LoadToolStripMenuItem;
         private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.Button moreButton;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 

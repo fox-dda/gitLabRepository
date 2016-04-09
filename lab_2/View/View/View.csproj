@@ -53,11 +53,11 @@
     <Compile Include="AddOrModifyMotionForm.Designer.cs">
       <DependentUpon>AddOrModifyMotionForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MoreUserControl.cs">
+    <Compile Include="MotionInfoUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MoreUserControl.Designer.cs">
-      <DependentUpon>MoreUserControl.cs</DependentUpon>
+    <Compile Include="MotionInfoUserControl.Designer.cs">
+      <DependentUpon>MotionInfoUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MotionCalculatorForm.cs">
       <SubType>Form</SubType>
@@ -76,8 +76,8 @@
     <EmbeddedResource Include="AddOrModifyMotionForm.resx">
       <DependentUpon>AddOrModifyMotionForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MoreUserControl.resx">
-      <DependentUpon>MoreUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="MotionInfoUserControl.resx">
+      <DependentUpon>MotionInfoUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MotionCalculatorForm.resx">
       <DependentUpon>MotionCalculatorForm.cs</DependentUpon>
