@@ -32,7 +32,15 @@ namespace View
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+            motionInfoControl.Show();
+            motionInfoControl.Location = new Point(560,15);
+            Controls.Add(motionInfoControl);
+            motionInfoControl.Anchor = (AnchorStyles.Right | AnchorStyles.Top);
+            motionInfoControl.ReadOnly = true;
         }
+
+        public motionInfoUserControl motionInfoControl = new motionInfoUserControl();
+
         /// <summary>
         /// Список объектов движения
         /// </summary>
@@ -152,6 +160,7 @@ namespace View
             DialogResult result = MessageBox.Show("Current data will be lost. Сontinue?", "New", MessageBoxButtons.YesNo, MessageBoxIcon.Question); // выводим сообщение с вопросом
             if (result == DialogResult.Yes) // если пользователь отвечает да 
             {
+                motionInfoControl.Motion = null;
                 motionList.Clear();             // очистить список объектов
                 MotionDataGridView.Rows.Clear();     // очистить таблицу    
             }
@@ -222,6 +231,11 @@ namespace View
                     }
                     MessageBox.Show("File is loading");
             }
+        }
+
+        private void MotionDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            motionInfoControl.Motion = motionList[e.RowIndex];
         }
     }
 }
