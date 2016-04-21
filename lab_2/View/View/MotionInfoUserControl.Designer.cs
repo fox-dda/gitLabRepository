@@ -32,14 +32,9 @@
             this.uniformRadioButton = new System.Windows.Forms.RadioButton();
             this.accelerationRadioButton = new System.Windows.Forms.RadioButton();
             this.vibrationalRadioButton = new System.Windows.Forms.RadioButton();
-            this.accelerationAmplitudeLabel = new System.Windows.Forms.Label();
-            this.timeLabel = new System.Windows.Forms.Label();
-            this.startSpeedLabel = new System.Windows.Forms.Label();
-            this.startCoordinateLabel = new System.Windows.Forms.Label();
-            this.startCoordinateTextBox = new System.Windows.Forms.TextBox();
-            this.startSpeedTextBox = new System.Windows.Forms.TextBox();
-            this.timeTextBox = new System.Windows.Forms.TextBox();
-            this.accelerationAmplitudeTextBox = new System.Windows.Forms.TextBox();
+            this.vibrationalDataUserControl1 = new View.VibrationalDataUserControl();
+            this.accelerationDataUserControl1 = new View.AccelerationDataUserControl();
+            this.defaultDataUserControl1 = new View.DefaultDataUserControl();
             this.MotionStyleGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,102 +84,49 @@
             this.vibrationalRadioButton.UseVisualStyleBackColor = true;
             this.vibrationalRadioButton.CheckedChanged += new System.EventHandler(this.vibrationalRadioButton_CheckedChanged);
             // 
-            // accelerationAmplitudeLabel
+            // vibrationalDataUserControl1
             // 
-            this.accelerationAmplitudeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.accelerationAmplitudeLabel.AutoSize = true;
-            this.accelerationAmplitudeLabel.Location = new System.Drawing.Point(18, 225);
-            this.accelerationAmplitudeLabel.Name = "accelerationAmplitudeLabel";
-            this.accelerationAmplitudeLabel.Size = new System.Drawing.Size(66, 13);
-            this.accelerationAmplitudeLabel.TabIndex = 32;
-            this.accelerationAmplitudeLabel.Text = "Acceleration";
+            this.vibrationalDataUserControl1.Location = new System.Drawing.Point(8, 231);
+            this.vibrationalDataUserControl1.Name = "vibrationalDataUserControl1";
+            this.vibrationalDataUserControl1.ReadOnly = true;
+            this.vibrationalDataUserControl1.Size = new System.Drawing.Size(182, 27);
+            this.vibrationalDataUserControl1.TabIndex = 46;
+            this.vibrationalDataUserControl1.Visible = false;
             // 
-            // timeLabel
+            // accelerationDataUserControl1
             // 
-            this.timeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.timeLabel.AutoSize = true;
-            this.timeLabel.Location = new System.Drawing.Point(18, 199);
-            this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(30, 13);
-            this.timeLabel.TabIndex = 31;
-            this.timeLabel.Text = "Time";
+            this.accelerationDataUserControl1.Location = new System.Drawing.Point(8, 205);
+            this.accelerationDataUserControl1.Name = "accelerationDataUserControl1";
+            this.accelerationDataUserControl1.ReadOnly = true;
+            this.accelerationDataUserControl1.Size = new System.Drawing.Size(182, 27);
+            this.accelerationDataUserControl1.TabIndex = 45;
+            this.accelerationDataUserControl1.Visible = false;
             // 
-            // startSpeedLabel
+            // defaultDataUserControl1
             // 
-            this.startSpeedLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.startSpeedLabel.AutoSize = true;
-            this.startSpeedLabel.Location = new System.Drawing.Point(18, 173);
-            this.startSpeedLabel.Name = "startSpeedLabel";
-            this.startSpeedLabel.Size = new System.Drawing.Size(61, 13);
-            this.startSpeedLabel.TabIndex = 30;
-            this.startSpeedLabel.Text = "Start speed";
-            // 
-            // startCoordinateLabel
-            // 
-            this.startCoordinateLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.startCoordinateLabel.AutoSize = true;
-            this.startCoordinateLabel.Location = new System.Drawing.Point(18, 147);
-            this.startCoordinateLabel.Name = "startCoordinateLabel";
-            this.startCoordinateLabel.Size = new System.Drawing.Size(82, 13);
-            this.startCoordinateLabel.TabIndex = 29;
-            this.startCoordinateLabel.Text = "Start coordinate";
-            // 
-            // startCoordinateTextBox
-            // 
-            this.startCoordinateTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.startCoordinateTextBox.Location = new System.Drawing.Point(106, 144);
-            this.startCoordinateTextBox.Name = "startCoordinateTextBox";
-            this.startCoordinateTextBox.Size = new System.Drawing.Size(84, 20);
-            this.startCoordinateTextBox.TabIndex = 37;
-            this.startCoordinateTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.startCoordinateTextBox_KeyPress);
-            // 
-            // startSpeedTextBox
-            // 
-            this.startSpeedTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.startSpeedTextBox.Location = new System.Drawing.Point(106, 170);
-            this.startSpeedTextBox.Name = "startSpeedTextBox";
-            this.startSpeedTextBox.Size = new System.Drawing.Size(84, 20);
-            this.startSpeedTextBox.TabIndex = 38;
-            this.startSpeedTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.startSpeedTextBox_KeyPress);
-            // 
-            // timeTextBox
-            // 
-            this.timeTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.timeTextBox.Location = new System.Drawing.Point(106, 196);
-            this.timeTextBox.Name = "timeTextBox";
-            this.timeTextBox.Size = new System.Drawing.Size(84, 20);
-            this.timeTextBox.TabIndex = 39;
-            this.timeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.timeTextBox_KeyPress);
-            // 
-            // accelerationAmplitudeTextBox
-            // 
-            this.accelerationAmplitudeTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.accelerationAmplitudeTextBox.Location = new System.Drawing.Point(106, 222);
-            this.accelerationAmplitudeTextBox.Name = "accelerationAmplitudeTextBox";
-            this.accelerationAmplitudeTextBox.Size = new System.Drawing.Size(84, 20);
-            this.accelerationAmplitudeTextBox.TabIndex = 40;
-            this.accelerationAmplitudeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.accelerationAmplitudeTextBox_KeyPress);
+            this.defaultDataUserControl1.Location = new System.Drawing.Point(8, 127);
+            this.defaultDataUserControl1.Name = "defaultDataUserControl1";
+            this.defaultDataUserControl1.ReadOnly = true;
+            this.defaultDataUserControl1.Size = new System.Drawing.Size(182, 81);
+            this.defaultDataUserControl1.StartCoordinate = "";
+            this.defaultDataUserControl1.StartSpeed = "";
+            this.defaultDataUserControl1.TabIndex = 44;
+            this.defaultDataUserControl1.Time = "";
             // 
             // motionInfoUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Controls.Add(this.accelerationAmplitudeTextBox);
-            this.Controls.Add(this.timeTextBox);
-            this.Controls.Add(this.startSpeedTextBox);
-            this.Controls.Add(this.startCoordinateTextBox);
+            this.Controls.Add(this.vibrationalDataUserControl1);
+            this.Controls.Add(this.accelerationDataUserControl1);
+            this.Controls.Add(this.defaultDataUserControl1);
             this.Controls.Add(this.MotionStyleGroupBox);
-            this.Controls.Add(this.accelerationAmplitudeLabel);
-            this.Controls.Add(this.timeLabel);
-            this.Controls.Add(this.startSpeedLabel);
-            this.Controls.Add(this.startCoordinateLabel);
             this.Name = "motionInfoUserControl";
             this.Size = new System.Drawing.Size(206, 265);
             this.MotionStyleGroupBox.ResumeLayout(false);
             this.MotionStyleGroupBox.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -194,14 +136,9 @@
         private System.Windows.Forms.RadioButton uniformRadioButton;
         private System.Windows.Forms.RadioButton accelerationRadioButton;
         private System.Windows.Forms.RadioButton vibrationalRadioButton;
-        private System.Windows.Forms.Label accelerationAmplitudeLabel;
-        private System.Windows.Forms.Label timeLabel;
-        private System.Windows.Forms.Label startSpeedLabel;
-        private System.Windows.Forms.Label startCoordinateLabel;
-        private System.Windows.Forms.TextBox startCoordinateTextBox;
-        private System.Windows.Forms.TextBox startSpeedTextBox;
-        private System.Windows.Forms.TextBox timeTextBox;
-        private System.Windows.Forms.TextBox accelerationAmplitudeTextBox;
+        private DefaultDataUserControl defaultDataUserControl1;
+        private AccelerationDataUserControl accelerationDataUserControl1;
+        private VibrationalDataUserControl vibrationalDataUserControl1;
 
 
 

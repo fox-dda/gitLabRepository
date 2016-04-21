@@ -47,6 +47,7 @@
             this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SearchButton = new System.Windows.Forms.Button();
+            this.motionInfoUserControl = new View.motionInfoUserControl();
             this.MotionListGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MotionDataGridView)).BeginInit();
             this.MotionMenuStrip.SuspendLayout();
@@ -58,7 +59,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MotionListGroupBox.Controls.Add(this.MotionDataGridView);
-            this.MotionListGroupBox.Location = new System.Drawing.Point(12, 35);
+            this.MotionListGroupBox.Location = new System.Drawing.Point(12, 27);
             this.MotionListGroupBox.Name = "MotionListGroupBox";
             this.MotionListGroupBox.Size = new System.Drawing.Size(548, 310);
             this.MotionListGroupBox.TabIndex = 0;
@@ -123,10 +124,10 @@
             // RemoveMotionButton
             // 
             this.RemoveMotionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.RemoveMotionButton.Location = new System.Drawing.Point(524, 361);
+            this.RemoveMotionButton.Location = new System.Drawing.Point(288, 351);
             this.RemoveMotionButton.MaximumSize = new System.Drawing.Size(500, 500);
             this.RemoveMotionButton.Name = "RemoveMotionButton";
-            this.RemoveMotionButton.Size = new System.Drawing.Size(169, 23);
+            this.RemoveMotionButton.Size = new System.Drawing.Size(84, 23);
             this.RemoveMotionButton.TabIndex = 3;
             this.RemoveMotionButton.Text = "Remove";
             this.RemoveMotionButton.UseVisualStyleBackColor = true;
@@ -135,10 +136,10 @@
             // AddMotionButton
             // 
             this.AddMotionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AddMotionButton.Location = new System.Drawing.Point(145, 361);
+            this.AddMotionButton.Location = new System.Drawing.Point(18, 351);
             this.AddMotionButton.MaximumSize = new System.Drawing.Size(500, 500);
             this.AddMotionButton.Name = "AddMotionButton";
-            this.AddMotionButton.Size = new System.Drawing.Size(172, 23);
+            this.AddMotionButton.Size = new System.Drawing.Size(84, 23);
             this.AddMotionButton.TabIndex = 1;
             this.AddMotionButton.Text = "Add";
             this.AddMotionButton.UseVisualStyleBackColor = true;
@@ -147,10 +148,10 @@
             // CreateRandomDataButton
             // 
             this.CreateRandomDataButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.CreateRandomDataButton.Location = new System.Drawing.Point(145, 390);
+            this.CreateRandomDataButton.Location = new System.Drawing.Point(378, 351);
             this.CreateRandomDataButton.MaximumSize = new System.Drawing.Size(500, 500);
             this.CreateRandomDataButton.Name = "CreateRandomDataButton";
-            this.CreateRandomDataButton.Size = new System.Drawing.Size(172, 23);
+            this.CreateRandomDataButton.Size = new System.Drawing.Size(84, 23);
             this.CreateRandomDataButton.TabIndex = 4;
             this.CreateRandomDataButton.Text = "Create random data";
             this.CreateRandomDataButton.UseVisualStyleBackColor = true;
@@ -159,10 +160,10 @@
             // ModifyButton
             // 
             this.ModifyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ModifyButton.Location = new System.Drawing.Point(336, 361);
+            this.ModifyButton.Location = new System.Drawing.Point(108, 351);
             this.ModifyButton.MaximumSize = new System.Drawing.Size(500, 500);
             this.ModifyButton.Name = "ModifyButton";
-            this.ModifyButton.Size = new System.Drawing.Size(171, 23);
+            this.ModifyButton.Size = new System.Drawing.Size(84, 23);
             this.ModifyButton.TabIndex = 2;
             this.ModifyButton.Text = "Modify";
             this.ModifyButton.UseVisualStyleBackColor = true;
@@ -192,46 +193,57 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(111, 6);
             // 
             // NewToolStripMenuItem
             // 
             this.NewToolStripMenuItem.Name = "NewToolStripMenuItem";
-            this.NewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.NewToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.NewToolStripMenuItem.Text = "New";
             this.NewToolStripMenuItem.Click += new System.EventHandler(this.NewToolStripMenuItem_Click);
             // 
             // SaveAsToolStripMenuItem
             // 
             this.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem";
-            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.SaveAsToolStripMenuItem.Text = "Save As";
             this.SaveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
             // LoadToolStripMenuItem
             // 
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
-            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.LoadToolStripMenuItem.Text = "Load";
             this.LoadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
             // SearchButton
             // 
             this.SearchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.SearchButton.Location = new System.Drawing.Point(336, 390);
+            this.SearchButton.Location = new System.Drawing.Point(198, 351);
             this.SearchButton.MaximumSize = new System.Drawing.Size(500, 500);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(171, 23);
+            this.SearchButton.Size = new System.Drawing.Size(84, 23);
             this.SearchButton.TabIndex = 5;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
+            // motionInfoUserControl
+            // 
+            this.motionInfoUserControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.motionInfoUserControl.Location = new System.Drawing.Point(561, 27);
+            this.motionInfoUserControl.Motion = null;
+            this.motionInfoUserControl.Name = "motionInfoUserControl";
+            this.motionInfoUserControl.ReadOnly = true;
+            this.motionInfoUserControl.Size = new System.Drawing.Size(206, 265);
+            this.motionInfoUserControl.TabIndex = 6;
             // 
             // MotionCalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 426);
+            this.Controls.Add(this.motionInfoUserControl);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.ModifyButton);
             this.Controls.Add(this.CreateRandomDataButton);
@@ -274,6 +286,7 @@
         private System.Windows.Forms.ToolStripMenuItem SaveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem LoadToolStripMenuItem;
         private System.Windows.Forms.Button SearchButton;
+        private motionInfoUserControl motionInfoUserControl;
     }
 }
 

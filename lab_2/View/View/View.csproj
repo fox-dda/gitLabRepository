@@ -47,11 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccelerationDataUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AccelerationDataUserControl.Designer.cs">
+      <DependentUpon>AccelerationDataUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddOrModifyMotionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddOrModifyMotionForm.Designer.cs">
       <DependentUpon>AddOrModifyMotionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultDataUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DefaultDataUserControl.Designer.cs">
+      <DependentUpon>DefaultDataUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MotionInfoUserControl.cs">
       <SubType>UserControl</SubType>
@@ -73,8 +85,20 @@
     <Compile Include="SearchForm.Designer.cs">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="VibrationalDataUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VibrationalDataUserControl.Designer.cs">
+      <DependentUpon>VibrationalDataUserControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AccelerationDataUserControl.resx">
+      <DependentUpon>AccelerationDataUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddOrModifyMotionForm.resx">
       <DependentUpon>AddOrModifyMotionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DefaultDataUserControl.resx">
+      <DependentUpon>DefaultDataUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MotionInfoUserControl.resx">
       <DependentUpon>MotionInfoUserControl.cs</DependentUpon>
@@ -93,6 +117,9 @@
     </Compile>
     <EmbeddedResource Include="SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VibrationalDataUserControl.resx">
+      <DependentUpon>VibrationalDataUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

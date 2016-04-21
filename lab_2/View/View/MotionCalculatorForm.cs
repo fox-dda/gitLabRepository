@@ -32,14 +32,7 @@ namespace View
             {
                 column.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
-            motionInfoControl.Show();
-            motionInfoControl.Location = new Point(560,15);
-            Controls.Add(motionInfoControl);
-            motionInfoControl.Anchor = (AnchorStyles.Right | AnchorStyles.Top);
-            motionInfoControl.ReadOnly = true;
         }
-
-        public motionInfoUserControl motionInfoControl = new motionInfoUserControl();
 
         /// <summary>
         /// Список объектов движения
@@ -47,14 +40,9 @@ namespace View
         public List<Model.IMotion> motionList = new List<Model.IMotion>();
 
         /// <summary>
-        /// Строка выбранная для редактирования в таблице
-        /// </summary>
-        public int modifyItemFlag = -1;
-
-        /// <summary>
         /// Переменная для храниения выбранной строки в таблице 
         /// </summary>
-        public int selectedRowIndex;
+        private int selectedRowIndex;
 
         /// <summary>
         /// Нажатие на кнопку "Remove motion"
@@ -86,6 +74,11 @@ namespace View
             var addMotion = new AddOrModifyMotionForm();// инициализовать форму для добавление объекта в список и таблицу
             addMotion.Owner = this; // указываем родителя формы
             addMotion.ShowDialog(); // открыть форму addMotion поверх MotionCalculator
+            if (addMotion.Motion != null)
+            {
+                motionList.Add(addMotion.Motion);
+                MessageBox.Show("Motion added");
+            }
         }
 
         /// <summary>
@@ -144,10 +137,16 @@ namespace View
         {
             if (MotionDataGridView.SelectedRows.Count != 0)
             {
-                    var ModifyMotion = new AddOrModifyMotionForm();// инициализовать форму для добавление объекта в список и таблицу
-                    modifyItemFlag = MotionDataGridView.SelectedRows[0].Index; // запомнить выделенную строку в таблице
-                    ModifyMotion.Owner = this; // указываем родителя формы
-                    ModifyMotion.ShowDialog(); // открыть окно поверх MotionCalculator
+                selectedRowIndex = MotionDataGridView.SelectedRows[0].Index;
+                var modifyMotion = new AddOrModifyMotionForm();// инициализовать форму для добавление объекта в список и таблицу
+                modifyMotion.Owner = this; // указываем родителя формы
+                modifyMotion.Motion = motionList[selectedRowIndex]; //передаем объект для редактикования
+                modifyMotion.ShowDialog(); // открыть окно поверх MotionCalculator
+                if (modifyMotion.Motion != null)
+                {
+                    motionList[selectedRowIndex] = modifyMotion.Motion;
+                    MessageBox.Show("Motion was changed");
+                }
             }
             else MessageBox.Show("Table is empty");
         }
@@ -160,7 +159,7 @@ namespace View
             DialogResult result = MessageBox.Show("Current data will be lost. Сontinue?", "New", MessageBoxButtons.YesNo, MessageBoxIcon.Question); // выводим сообщение с вопросом
             if (result == DialogResult.Yes) // если пользователь отвечает да 
             {
-                motionInfoControl.Motion = null;
+               // motionInfoControl.Motion = null;
                 motionList.Clear();             // очистить список объектов
                 MotionDataGridView.Rows.Clear();     // очистить таблицу    
             }
@@ -181,7 +180,7 @@ namespace View
         /// </summary>
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var serializer = new Newtonsoft.Json.JsonSerializer()
+            var serializer = new JsonSerializer()
             {
                 NullValueHandling = NullValueHandling.Ignore,
                 TypeNameHandling = TypeNameHandling.Auto,
@@ -194,10 +193,10 @@ namespace View
             saveFileDialog.OverwritePrompt = true;          
             if (saveFileDialog.ShowDialog() == DialogResult.Cancel)
             return; 
-            string outputString = Newtonsoft.Json.JsonConvert.SerializeObject(motionList);
+            string outputString = JsonConvert.SerializeObject(motionList);
             using (StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName))
             {
-                using (Newtonsoft.Json.JsonWriter jWriter = new Newtonsoft.Json.JsonTextWriter(streamWriter))
+                using (JsonWriter jWriter = new JsonTextWriter(streamWriter))
                 {
                     serializer.Serialize(jWriter, motionList);
                 }
@@ -233,9 +232,14 @@ namespace View
             }
         }
 
+        /// <summary>
+        /// Событие при выборе строки в таблице
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MotionDataGridView_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            motionInfoControl.Motion = motionList[e.RowIndex];
+            motionInfoUserControl.Motion = motionList[e.RowIndex];
         }
     }
 }

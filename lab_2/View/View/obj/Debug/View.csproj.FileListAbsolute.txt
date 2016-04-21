@@ -27,3 +27,6 @@ C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\View\obj\Debug\View.
 C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\View\obj\Debug\View.SearchForm.resources
 C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\View\obj\Debug\View.csproj.GenerateResource.Cache
 C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\View\obj\Debug\View.motionInfoUserControl.resources
+C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\View\obj\Debug\View.DefaultDataUserControl.resources
+C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\View\obj\Debug\View.AccelerationDataUserControl.resources
+C:\Users\Димасик\Desktop\gitLabRepository\lab_2\View\View\obj\Debug\View.VibrationalDataUserControl.resources

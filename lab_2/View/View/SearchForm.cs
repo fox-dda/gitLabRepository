@@ -30,6 +30,7 @@ namespace View
         {
             if (TextForSearchigMaskedTextBox.Text != "")
             {
+                SearchDataGridView.Rows.Clear();
                 if (StyleRadioButton.Checked == true) // поиск по стилю
                 {
                     for (int i = 0; i < mainForm.motionList.Count; i++) // перебираем все объекты в списке на предмет свпадения стилей

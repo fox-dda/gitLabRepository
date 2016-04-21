@@ -1,0 +1,6 @@
+C:\Users\Димасик\Desktop\gitLabRepository\_lab_1\lab_1\bin\Release\Model.dll.config
+C:\Users\Димасик\Desktop\gitLabRepository\_lab_1\lab_1\bin\Release\Model.dll
+C:\Users\Димасик\Desktop\gitLabRepository\_lab_1\lab_1\bin\Release\Model.pdb
+C:\Users\Димасик\Desktop\gitLabRepository\_lab_1\lab_1\obj\Release\Model.csprojResolveAssemblyReference.cache
+C:\Users\Димасик\Desktop\gitLabRepository\_lab_1\lab_1\obj\Release\Model.dll
+C:\Users\Димасик\Desktop\gitLabRepository\_lab_1\lab_1\obj\Release\Model.pdb

@@ -62,7 +62,7 @@ namespace Model
         public void TimeTestNegative(int time)
         {
             var accelerated = new Accelerated(0, 0, 0, 0);
-            NUnit.Framework.Assert.Throws(typeof(ArgumentException), () => { accelerated.Time = time; });   //!!!//
+            Assert.Throws(typeof(ArgumentException), () => { accelerated.Time = time; });   //!!!//
         }
 
         /// <summary>

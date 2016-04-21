@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,32 +17,6 @@ namespace View
         public motionInfoUserControl()
         {
             InitializeComponent();
-        }
-
-        private void OnlyNumbers(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
-                e.Handled = true;
-        }
-
-        private void startCoordinateTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyNumbers(sender, e);
-        }
-
-        private void startSpeedTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyNumbers(sender, e);
-        }
-
-        private void timeTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyNumbers(sender, e);
-        }
-
-        private void accelerationAmplitudeTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            OnlyNumbers(sender, e);
         }
 
         /// <summary>
@@ -58,11 +33,9 @@ namespace View
             {
                 if (value) // если только для чтения
                 {
-                    foreach (Control control in Controls)
-                    {
-                        if (control is TextBox)
-                            (control as TextBox).ReadOnly = true; // выбрать текстбоксы из всех контролов и присвоить им свойство только чтение
-                    }
+                    defaultDataUserControl1.ReadOnly = true;
+                    accelerationDataUserControl1.ReadOnly = true;
+                    vibrationalDataUserControl1.ReadOnly = true;
                     uniformRadioButton.Enabled = false;
                     accelerationRadioButton.Enabled = false;
                     vibrationalRadioButton.Enabled = false; // запретить изменения радиобаттонов
@@ -70,11 +43,9 @@ namespace View
                 }
                 if (!value) // если только для чтения отключено
                 {
-                    foreach (Control control in Controls)
-                    {
-                        if (control is TextBox)
-                            (control as TextBox).ReadOnly = false;
-                    }
+                    defaultDataUserControl1.ReadOnly = false;
+                    accelerationDataUserControl1.ReadOnly = false;
+                    vibrationalDataUserControl1.ReadOnly = false;
                     uniformRadioButton.Enabled = true;
                     accelerationRadioButton.Enabled = true;
                     vibrationalRadioButton.Enabled = true;
@@ -87,14 +58,21 @@ namespace View
             }
         }
 
+        /// <summary>
+        /// Метод возвращает true, если достаточные данные, и false если недостаточные
+        /// </summary>
+        /// <returns></returns>
         public bool IsFulness()
         {
-            if (uniformRadioButton.Checked && startSpeedTextBox.Text != "" && startCoordinateTextBox.Text != "" &&
-                timeTextBox.Text != "")
+            if (uniformRadioButton.Checked && Convert.ToString(defaultDataUserControl1.StartSpeed) != "" && Convert.ToString(defaultDataUserControl1.StartCoordinate) != "" &&
+                Convert.ToString(defaultDataUserControl1.Time) != "")
                 return true;
-            if ((accelerationRadioButton.Checked || vibrationalRadioButton.Checked) && startSpeedTextBox.Text != "" &&
-                startCoordinateTextBox.Text != "" &&
-                timeTextBox.Text != "" && accelerationAmplitudeLabel.Text != "")
+            if (accelerationRadioButton.Checked && Convert.ToString(defaultDataUserControl1.StartSpeed) != "" &&
+                Convert.ToString(defaultDataUserControl1.StartCoordinate) != "" &&
+                Convert.ToString(defaultDataUserControl1.Time) != "" && Convert.ToString(accelerationDataUserControl1.Acceleration) != "")
+                return true;
+            if (vibrationalRadioButton.Checked && Convert.ToString(defaultDataUserControl1.StartSpeed) != "" && Convert.ToString(defaultDataUserControl1.StartCoordinate) != "" &&
+               Convert.ToString(defaultDataUserControl1.Time) != "" && Convert.ToString(vibrationalDataUserControl1.Amplitude) != "")
                 return true;
             return false;
         }
@@ -108,42 +86,35 @@ namespace View
             {
                 if (value is Uniform)
                 {
-                    startCoordinateTextBox.Text = Convert.ToString(value.StartCoordinate);
-                    startSpeedTextBox.Text = Convert.ToString(value.StartSpeed);
-                    timeTextBox.Text = Convert.ToString(value.Time);
+                    defaultDataUserControl1.StartCoordinate = Convert.ToString(value.StartCoordinate);
+                    defaultDataUserControl1.StartSpeed = Convert.ToString(value.StartSpeed);
+                    defaultDataUserControl1.Time = Convert.ToString(value.Time);
                     uniformRadioButton.Checked = true;
-                    accelerationAmplitudeTextBox.Visible = false;
-                    accelerationAmplitudeLabel.Visible = false;
+                    accelerationDataUserControl1.Visible = false;
+                    vibrationalDataUserControl1.Visible = false;
                 }
                 if (value is Accelerated)
                 {
-                    startCoordinateTextBox.Text = Convert.ToString(value.StartCoordinate);
-                    startSpeedTextBox.Text = Convert.ToString(value.StartSpeed);
-                    timeTextBox.Text = Convert.ToString(value.Time);
-                    accelerationAmplitudeTextBox.Text = Convert.ToString((value as Accelerated).Acceleration); // привести к базовому классу
+                    defaultDataUserControl1.StartCoordinate = Convert.ToString(value.StartCoordinate);
+                    defaultDataUserControl1.StartSpeed = Convert.ToString(value.StartSpeed);
+                    defaultDataUserControl1.Time = Convert.ToString(value.Time);
+                    accelerationDataUserControl1.Acceleration = Convert.ToString((value as Accelerated).Acceleration); 
                     accelerationRadioButton.Checked = true;
-                    accelerationAmplitudeTextBox.Visible = true;
-                    accelerationAmplitudeLabel.Visible = true;
-                    accelerationAmplitudeLabel.Text = "Acceleration";
+                    accelerationDataUserControl1.Visible = true;
+                    vibrationalDataUserControl1.Visible = false;
                 }
                 if (value is Vibrational)
                 {
-                    startCoordinateTextBox.Text = Convert.ToString(value.StartCoordinate);
-                    startSpeedTextBox.Text = Convert.ToString(value.StartSpeed);
-                    timeTextBox.Text = Convert.ToString(value.Time);
-                    accelerationAmplitudeTextBox.Text = Convert.ToString((value as Vibrational).Amplitude);  // привести к базовуму классу
+                    defaultDataUserControl1.StartCoordinate = Convert.ToString(value.StartCoordinate);
+                    defaultDataUserControl1.StartSpeed = Convert.ToString(value.StartSpeed);
+                    defaultDataUserControl1.Time = Convert.ToString(value.Time);
+                    vibrationalDataUserControl1.Amplitude = Convert.ToString((value as Vibrational).Amplitude);
                     vibrationalRadioButton.Checked = true;
-                    accelerationAmplitudeTextBox.Visible = true;
-                    accelerationAmplitudeLabel.Visible = true;
-                    accelerationAmplitudeLabel.Text = "Amplitude";
+                    accelerationDataUserControl1.Visible = false;
+                    vibrationalDataUserControl1.Visible = true;     
                 }
                 if (value == null)
                 {
-                    foreach (Control control in Controls)
-                    {
-                        if (control is TextBox)
-                            (control as TextBox).Clear();
-                    }
                     uniformRadioButton.Checked = false;
                     accelerationRadioButton.Checked = false;
                     vibrationalRadioButton.Checked = false;
@@ -151,35 +122,35 @@ namespace View
             }
             get
             {
-                if (uniformRadioButton.Checked == true)
+                if (uniformRadioButton.Checked)
                 {
                     var uniform = new Uniform
                         (
-                        Convert.ToInt32(startCoordinateTextBox.Text),
-                        Convert.ToInt32(startSpeedTextBox.Text),
-                        Convert.ToInt32(timeTextBox.Text)
+                         Convert.ToInt32(defaultDataUserControl1.StartCoordinate),
+                         Convert.ToInt32(defaultDataUserControl1.StartSpeed),
+                         Convert.ToInt32(defaultDataUserControl1.Time)
                         );
                     return uniform;
                 }
-                if (accelerationRadioButton.Checked == true)
+                if (accelerationRadioButton.Checked)
                 {
                     var accelerated = new Accelerated
                         (
-                        Convert.ToInt32(startCoordinateTextBox.Text),
-                        Convert.ToInt32(startSpeedTextBox.Text),
-                        Convert.ToInt32(timeTextBox.Text),
-                        Convert.ToInt32(accelerationAmplitudeTextBox.Text)
+                         Convert.ToInt32(defaultDataUserControl1.StartCoordinate),
+                         Convert.ToInt32(defaultDataUserControl1.StartSpeed),
+                         Convert.ToInt32(defaultDataUserControl1.Time),
+                         Convert.ToInt32(accelerationDataUserControl1.Acceleration)
                         );
                     return accelerated;
                 }
-                if (vibrationalRadioButton.Checked == true)
+                if (vibrationalRadioButton.Checked)
                 {
                     var vibrational = new Vibrational
                         (
-                        Convert.ToInt32(startCoordinateTextBox.Text),
-                        Convert.ToInt32(startSpeedTextBox.Text),
-                        Convert.ToInt32(timeTextBox.Text),
-                        Convert.ToInt32(accelerationAmplitudeTextBox.Text)
+                        Convert.ToInt32(defaultDataUserControl1.StartCoordinate),
+                        Convert.ToInt32(defaultDataUserControl1.StartSpeed),
+                        Convert.ToInt32(defaultDataUserControl1.Time),
+                        Convert.ToInt32(vibrationalDataUserControl1.Amplitude)
                         );
                     return vibrational;
                 }
@@ -187,26 +158,36 @@ namespace View
             }
         }
 
+        private void uniformRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (uniformRadioButton.Checked)
+            {
+                accelerationDataUserControl1.Visible = false;
+                vibrationalDataUserControl1.Visible = false;      
+
+            }
+        }
+
         private void accelerationRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            accelerationAmplitudeLabel.Text = "Acceleration";
-            accelerationAmplitudeLabel.Visible = true;
-            accelerationAmplitudeTextBox.Visible = true;
+            if (accelerationRadioButton.Checked)
+            {
+                accelerationDataUserControl1.Visible = true;
+                vibrationalDataUserControl1.Visible = false;
+                accelerationDataUserControl1.Location = new Point(8, 205);
+                vibrationalDataUserControl1.Location = new Point(8, 231);
+            }
         }
 
         private void vibrationalRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-            accelerationAmplitudeLabel.Text = "Amplitude";
-            accelerationAmplitudeLabel.Visible = true;
-            accelerationAmplitudeTextBox.Visible = true;
-
-
-        }
-
-        private void uniformRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            accelerationAmplitudeLabel.Visible = false;
-            accelerationAmplitudeTextBox.Visible = false;
+            if (vibrationalRadioButton.Checked)
+            {
+                accelerationDataUserControl1.Visible = false;
+                vibrationalDataUserControl1.Visible = true;
+                vibrationalDataUserControl1.Location = new Point(8, 205);
+                accelerationDataUserControl1.Location = new Point(8, 231);  
+            }
         }
     }
 }
